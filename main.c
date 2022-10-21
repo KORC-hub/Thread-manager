@@ -9,14 +9,25 @@
 
 static void *Proceso1(void)
 {
-	printf(" %i \n",1);
+
 }
+
+static void *Proceso2(void)
+{
+	// ksjhfksjdbf
+}
+
+static void *Proceso3(void)
+{
+	// lsdkjfjksdbf
+}
+
 
 int main()
 {
-	pthread_t hilo;
+	pthread_t hilo1, hiloLongScheduler, hiloShortScheduler;
 
-	pthread_create(&hilo, NULL, &Proceso1, NULL);
-	pthread_join(hilo, NULL);
+	pthread_create(&hilo1, NULL, &Proceso1, NULL);
+	pthread_join(hilo1, NULL);
 
 }
