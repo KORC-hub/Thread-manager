@@ -1,13 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>
+#include <windows.h>
+
+#include "Scheduler.h"
+
+
 
 static void *Proceso1(void)
 {
-	for (int i = 0; i < 10; ++i)
-	{
-		printf(" instruccion: %i \n", i+1);
-	}
+	printf(" %i \n",1);
 }
 
 int main()
