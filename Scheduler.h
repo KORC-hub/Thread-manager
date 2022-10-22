@@ -10,7 +10,7 @@ static void longScheduler(void)
 {
 	while (infoThread[2] < 3)
 	{
-		printf("---------------- El Planificador 1 se ejecuto (hA %i, hT %i \n", infoThread[1], infoThread[2]);
+		printf("---------------- El Planificador 1 se ejecuto (hA %i, hT %i) \n", infoThread[1], infoThread[2]);
 
 		for (int prioridad = 0; prioridad < 2; ++prioridad)
 		{
@@ -24,7 +24,7 @@ static void longScheduler(void)
 			}
 		}
 
-		Sleep(3);
+		Sleep(8000);
 	}
 
 }
@@ -33,7 +33,7 @@ static void shortScheduler(void)
 {
 	while (infoThread[2] < 3)
 	{
-		printf("--------- El Planificador 2 se ejecuto \n");
+		printf("\n--------- El Planificador 2 se ejecuto \n");
 
 		for (int id = 0; id < infoThread[0]; ++id)
 		{
@@ -47,14 +47,14 @@ static void shortScheduler(void)
 		{
 			if (scheduler[id][1] == 1)
 			{
-				printf("\n---- empezo la ejecucion del proceso & %i", scheduler[id][0]);
+				printf("\n---- empezo la ejecucion del proceso %i \n", scheduler[id][0]);
 				scheduler[id][1] = 2;
-				Sleep(2 - scheduler[id][2]);
+				Sleep(4000 - (scheduler[id][2] * 2000));
 				scheduler[id][1] = 3;
 				printf("---- termino la ejecucion del proceso %i \n", scheduler[id][0]);
 			} 
 		}
 	}
 
-	printf("\n-------------------- fin de la ejecucion (hA %i, hT %i \n", infoThread[1], infoThread[2]);
+	printf("\n-------------------- fin de la ejecucion (hA %i, hT %i) \n", infoThread[1], infoThread[2]);
 }
